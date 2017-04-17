@@ -1,0 +1,1600 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/pimterry/loglevel"
+
+    >loglevel (v1.4.1)</a>
+</h1>
+<h4>Minimal lightweight logging for JavaScript, adding reliable log level methods to any available console.log methods</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel">module loglevel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.Gruntfile">
+            function <span class="apidocSignatureSpan">loglevel.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.debug">
+            function <span class="apidocSignatureSpan">loglevel.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.disableAll">
+            function <span class="apidocSignatureSpan">loglevel.</span>disableAll
+            <span class="apidocSignatureSpan">(persist)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.enableAll">
+            function <span class="apidocSignatureSpan">loglevel.</span>enableAll
+            <span class="apidocSignatureSpan">(persist)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.error">
+            function <span class="apidocSignatureSpan">loglevel.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.getLevel">
+            function <span class="apidocSignatureSpan">loglevel.</span>getLevel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.getLogger">
+            function <span class="apidocSignatureSpan">loglevel.</span>getLogger
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.info">
+            function <span class="apidocSignatureSpan">loglevel.</span>info
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.methodFactory">
+            function <span class="apidocSignatureSpan">loglevel.</span>methodFactory
+            <span class="apidocSignatureSpan">(methodName, level, loggerName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.noConflict">
+            function <span class="apidocSignatureSpan">loglevel.</span>noConflict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.setDefaultLevel">
+            function <span class="apidocSignatureSpan">loglevel.</span>setDefaultLevel
+            <span class="apidocSignatureSpan">(level)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.setLevel">
+            function <span class="apidocSignatureSpan">loglevel.</span>setLevel
+            <span class="apidocSignatureSpan">(level, persist)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.trace">
+            function <span class="apidocSignatureSpan">loglevel.</span>trace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.warn">
+            function <span class="apidocSignatureSpan">loglevel.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">loglevel.</span>levels</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.Gruntfile">module loglevel.Gruntfile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.Gruntfile.Gruntfile">
+            function <span class="apidocSignatureSpan">loglevel.</span>Gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.disableAll">module loglevel.disableAll</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.disableAll.disableAll">
+            function <span class="apidocSignatureSpan">loglevel.</span>disableAll
+            <span class="apidocSignatureSpan">(persist)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.enableAll">module loglevel.enableAll</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.enableAll.enableAll">
+            function <span class="apidocSignatureSpan">loglevel.</span>enableAll
+            <span class="apidocSignatureSpan">(persist)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.error">module loglevel.error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.error.error">
+            function <span class="apidocSignatureSpan">loglevel.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.getLevel">module loglevel.getLevel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.getLevel.getLevel">
+            function <span class="apidocSignatureSpan">loglevel.</span>getLevel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.getLogger">module loglevel.getLogger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.getLogger.getLogger">
+            function <span class="apidocSignatureSpan">loglevel.</span>getLogger
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.methodFactory">module loglevel.methodFactory</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.methodFactory.methodFactory">
+            function <span class="apidocSignatureSpan">loglevel.</span>methodFactory
+            <span class="apidocSignatureSpan">(methodName, level, loggerName)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.noConflict">module loglevel.noConflict</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.noConflict.noConflict">
+            function <span class="apidocSignatureSpan">loglevel.</span>noConflict
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.setDefaultLevel">module loglevel.setDefaultLevel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.setDefaultLevel.setDefaultLevel">
+            function <span class="apidocSignatureSpan">loglevel.</span>setDefaultLevel
+            <span class="apidocSignatureSpan">(level)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.setLevel">module loglevel.setLevel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.setLevel.setLevel">
+            function <span class="apidocSignatureSpan">loglevel.</span>setLevel
+            <span class="apidocSignatureSpan">(level, persist)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.trace">module loglevel.trace</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.trace.trace">
+            function <span class="apidocSignatureSpan">loglevel.</span>trace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.loglevel.warn">module loglevel.warn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.loglevel.warn.warn">
+            function <span class="apidocSignatureSpan">loglevel.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel" id="apidoc.module.loglevel">module loglevel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.Gruntfile" id="apidoc.element.loglevel.Gruntfile">
+        function <span class="apidocSignatureSpan">loglevel.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+
+    // Project configuration.
+    grunt.initConfig({
+        // Metadata.
+        pkg: grunt.file.readJSON(&#x27;package.json&#x27;),
+        banner: &#x27;/*! &#x3c;%= pkg.name %&#x3e; - v&#x3c;%= pkg.version %&#x3e;&#x27; +
+                &#x27; - &#x3c;%= pkg.homepage %&#x3e;&#x27; +
+                &#x27; - (c) &#x3c;%= grunt.template.today(&#x22;yyyy&#x22;) %&#x3e; &#x3c;%= pkg.author.name %&#x3e;&#x27; +
+                &#x27; - licensed &#x3c;%= pkg.license %&#x3e; */\n&#x27;,
+        // Task configuration.
+        concat: {
+            options: {
+                banner: &#x27;&#x3c;%= banner %&#x3e;&#x27;,
+                stripBanners: true
+            },
+            dist: {
+                src: [&#x27;lib/&#x3c;%= pkg.name %&#x3e;.js&#x27;],
+                dest: &#x27;dist/&#x3c;%= pkg.name %&#x3e;.js&#x27;
+            }
+        },
+        uglify: {
+            options: {
+                banner: &#x27;&#x3c;%= banner %&#x3e;&#x27;
+            },
+            dist: {
+                src: &#x27;&#x3c;%= concat.dist.dest %&#x3e;&#x27;,
+                dest: &#x27;dist/&#x3c;%= pkg.name %&#x3e;.min.js&#x27;
+            }
+        },
+        jasmine: {
+            requirejs: {
+                src: [],
+                options: {
+                    specs: &#x27;test/*-test.js&#x27;,
+                    vendor: &#x27;test/vendor/*.js&#x27;,
+                    helpers: &#x27;test/*-helper.js&#x27;,
+                    template: require(&#x27;grunt-template-jasmine-requirejs&#x27;)
+                }
+            },
+            global: {
+                src: &#x27;lib/**/*.js&#x27;,
+                options: {
+                    specs: &#x27;test/global-integration.js&#x27;,
+                    vendor: &#x27;test/vendor/*.js&#x27;
+                }
+            },
+            context: {
+                src: &#x27;test/test-context-using-apply.test.js&#x27;,
+                options: {
+                    specs: &#x27;test/global-integration-with-new-context.js&#x27;,
+                    vendor: &#x27;test/vendor/*.js&#x27;
+                }
+            },
+            withCoverage: {
+                src: &#x27;lib/**/*.js&#x27;,
+                options: {
+                    specs: &#x27;test/*-test.js&#x27;,
+                    vendor: &#x27;test/vendor/*.js&#x27;,
+                    helpers: &#x27;test/*-helper.js&#x27;,
+                    template: require(&#x27;grunt-template-jasmine-istanbul&#x27;),
+                    templateOptions: {
+                        coverage: &#x27;coverage/coverage.json&#x27;,
+                        report: [
+                            {
+                                type: &#x27;html&#x27;,
+                                options: {
+                                    dir: &#x27;coverage&#x27;
+                                }
+                            },
+                            {
+                                type: &#x27;lcov&#x27;,
+                                options: {
+                                    dir: &#x27;coverage&#x27;
+                                }
+                            }
+                        ],
+
+                        template: require(&#x27;grunt-template-jasmine-requirejs&#x27;),
+                        templateOptions: {
+                            requireConfig: {
+                                paths: {
+                                    &#x22;lib&#x22;: &#x27;.grunt/grunt-contrib-jasmine/lib/&#x27;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        &#x22;jasmine_node&#x22;: {
+            options: {
+                match: &#x22;node-integration.&#x22;,
+                matchall: true,
+                projectRoot: &#x22;./test&#x22;,
+                useHelpers: false
+            }
+        },
+        coveralls: {
+            src: &#x27;coverage/lcov.info&#x27;
+        },
+        open: {
+            jasmine: {
+                path: &#x27;http://127.0.0.1:8000/_SpecRunner.html&#x27;
+            }
+        },
+        connect: {
+            test: {
+                port: 8000,
+                keepalive: true
+            }
+        },
+        &#x27;saucelabs-jasmine&#x27;: {
+            // Requires valid SAUCE_USERNAME and SAUCE_ACCESS_KEY in env to run.
+            all: {
+                options: {
+                    urls: [&#x27;http://localhost:8000/_SpecRunner.html&#x27;],
+                    browsers: [
+                        {&#x22;browserName&#x22;: &#x22;firefox&#x22;, &#x22;platform&#x22;: &#x22;Windows 2003&#x22;, &#x22;version&#x22;: &#x22;3.6&#x22;},
+                        {&#x22;browserName&#x22;: &#x22;fir ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.debug" id="apidoc.element.loglevel.debug">
+        function <span class="apidocSignatureSpan">loglevel.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* Log things at a given level (trace/debug/info/warn/error) to the console object (as seen in all modern browsers &#x26; node.js
+)
+* Filter logging by level (all the above or &#x27;silent&#x27;), so you can disable all but error logging in production, and then
+ run log.setLevel(&#x22;trace&#x22;) in your console to turn it all back on for a furious debugging session
+* Single file, no dependencies, weighs in at 1.1KB minified and gzipped
+
+### Effective
+
+* Log methods gracefully fall back to simpler console logging methods if more specific ones aren&#x27;t available: so calls to log
+.<span class="apidocCodeKeywordSpan">debug</span>() go to console.debug() if possible, or console.log() if not
+* Logging calls still succeed even if there&#x27;s no console object at all, so your site doesn&#x27;t break when people visit with
+ old browsers that don&#x27;t support the console object (here&#x27;s looking at you IE) and similar
+* This then comes together giving a consistent reliable API that works in every JavaScript environment with a console available,
+and never breaks anything anywhere else
+
+### Convenient
+
+* Log output keeps line numbers: most JS logging frameworks call console.log methods through wrapper functions, clobbering your
+stacktrace and making the extra info many browsers provide useless. We&#x27;ll have none of that thanks.
+* It works with all the standard JavaScript loading systems out of the box (CommonJS, AMD, or just as a global)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.disableAll" id="apidoc.element.loglevel.disableAll">
+        function <span class="apidocSignatureSpan">loglevel.</span>disableAll
+        <span class="apidocSignatureSpan">(persist)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disableAll = function (persist) {
+    self.setLevel(self.levels.SILENT, persist);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* A `log.setDefaultLevel(level)` method.
+
+This sets the current log level only if one has not been persisted and can’t be loaded. This is useful when initializing scripts
+; if a developer or user has previously called `setLevel()`, this won’t alter their settings. For example, your application might
+ set the log level to `error` in a production environment, but when debugging an issue, you might call `setLevel(&#x22;trace&#x22
+;)` on the console to see all the logs. If that `error` setting was set using `setDefaultLevel()`, it will still say as `trace`
+on subsequent page loads and refreshes instead of resetting to `error`.
+
+The `level` argument takes is the same values that you might pass to `setLevel()`. Levels set using `setDefaultLevel()` never persist
+ to subsequent page loads.
+
+* `log.enableAll()` and `log.<span class="apidocCodeKeywordSpan">disableAll</span>()` methods.
+
+These enable or disable all log messages, and are equivalent to log.setLevel(&#x22;trace&#x22;) and log.setLevel(&#x22;silent&#x22
+;) respectively.
+
+* A `log.getLevel()` method.
+
+Returns the current logging level, as a number from 0 (trace) to 5 (silent)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.enableAll" id="apidoc.element.loglevel.enableAll">
+        function <span class="apidocSignatureSpan">loglevel.</span>enableAll
+        <span class="apidocSignatureSpan">(persist)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enableAll = function (persist) {
+    self.setLevel(self.levels.TRACE, persist);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Logging calls still succeed even if there&#x27;s no console object at all, so your site doesn&#x27;t break when people visit with
+ old browsers that don&#x27;t support the console object (here&#x27;s looking at you IE) and similar
+* This then comes together giving a consistent reliable API that works in every JavaScript environment with a console available,
+and never breaks anything anywhere else
+
+### Convenient
+
+* Log output keeps line numbers: most JS logging frameworks call console.log methods through wrapper functions, clobbering your
+stacktrace and making the extra info many browsers provide useless. We&#x27;ll have none of that thanks.
+* It works with all the standard JavaScript loading systems out of the box (CommonJS, AMD, or just as a global)
+* Logging is filtered to &#x22;warn&#x22; level by default, to keep your live site clean in normal usage (or you can trivially re
+-enable everything with an initial log.<span class="apidocCodeKeywordSpan">enableAll</span>() call)
+* Magically handles situations where console logging is not initially available (IE8/9), and automatically enables logging as soon
+ as it does become available (when developer console is opened)
+* Extensible, to add other log redirection, filtering, or formatting functionality, while keeping all the above (except you will
+ clobber your stacktrace, see Plugins below)
+
+## Downloading loglevel
+
+If you&#x27;re using NPM, you can just run `npm install loglevel`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.error" id="apidoc.element.loglevel.error">
+        function <span class="apidocSignatureSpan">loglevel.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Directly in your web page:
+
+```html
+&#x3c;script src=&#x22;loglevel.min.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script&#x3e;
+log.<span class="apidocCodeKeywordSpan">error</span>(&#x22;too easy&#x22;);
+&#x3c;/script&#x3e;
+```
+
+### With noConflict():
+
+If you&#x27;re using another JavaScript library that exposes a &#x27;log&#x27; global, you can run into conflicts with loglevel.
+Similarly to jQuery, you can solve this by putting loglevel into no-conflict mode immediately after it is loaded onto the page.
+This resets to &#x27;log&#x27; global to its value before loglevel was loaded (typically `undefined`), and returns the loglevel
+object, which you can then bind to another name yourself.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.getLevel" id="apidoc.element.loglevel.getLevel">
+        function <span class="apidocSignatureSpan">loglevel.</span>getLevel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLevel = function () {
+    return currentLevel;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The `level` argument takes is the same values that you might pass to `setLevel()`. Levels set using `setDefaultLevel()` never persist
+ to subsequent page loads.
+
+* `log.enableAll()` and `log.disableAll()` methods.
+
+These enable or disable all log messages, and are equivalent to log.setLevel(&#x22;trace&#x22;) and log.setLevel(&#x22;silent&#x22
+;) respectively.
+
+* A `log.<span class="apidocCodeKeywordSpan">getLevel</span>()` method.
+
+Returns the current logging level, as a number from 0 (trace) to 5 (silent)
+
+It&#x27;s very unlikely you&#x27;ll need to use this for normal application logging; it&#x27;s provided partly to help plugin development
+, and partly to let you optimize logging code as below, where debug data is only generated if the level is set such that it&#x27
+;ll actually be logged. This probably doesn&#x27;t affect you, unless you&#x27;ve run profiling on your code and you have hard numbers
+ telling you that your log data generation is a real performance problem.
+
+```javascript
+if (log.getLevel() &#x3c;= log.levels.DEBUG) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.getLogger" id="apidoc.element.loglevel.getLogger">
+        function <span class="apidocSignatureSpan">loglevel.</span>getLogger
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLogger(name) {
+    if (typeof name !== &#x22;string&#x22; || name === &#x22;&#x22;) {
+      throw new TypeError(&#x22;You must supply a name when creating a logger.&#x22;);
+    }
+
+    var logger = _loggersByName[name];
+    if (!logger) {
+      logger = _loggersByName[name] = new Logger(
+        name, defaultLogger.getLevel(), defaultLogger.methodFactory);
+    }
+    return logger;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This notably isn&#x27;t the right solution to avoid the cost of string concatenation in your logging. Firstly, it&#x27;s very unlikely
+ that string concatenation in your logging is really an important performance problem. Even if you do genuinely have hard metrics
+ showing that it is though, the better solution that wrapping your log statements in this is to use multiple arguments, as below
+. The underlying console API will automatically concatenate these for you if logging is enabled, and if it isn&#x27;t then all log
+ methods are no-ops, and no concatenation will be done at all.
+
+```javascript
+// Prints &#x27;My concatenated log message&#x27;
+log.debug(&#x22;My &#x22;, &#x22;concatenated &#x22;, &#x22;log message&#x22;);
+```
+
+* A `log.<span class="apidocCodeKeywordSpan">getLogger</span>(loggerName)` method.
+
+This gets you a new logger object that works exactly like the root `log` object, but can have its level and logging methods set
+independently. All loggers must have a name (which is a non-empty string). Calling `getLogger()` multiple times with the same name
+ will return an identical logger object.
+
+In large applications, it can be incredibly useful to turn logging on and off for particular modules as you are working with them
+. Using the `getLogger()` method lets you create a separate logger for each part of your application with its own logging level.
+
+Likewise, for small, independent modules, using a named logger instead of the default root logger allows developers using your module
+ to selectively turn on deep, trace-level logging when trying to debug problems, while logging only errors or silencing logging
+altogether under normal circumstances.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.info" id="apidoc.element.loglevel.info">
+        function <span class="apidocSignatureSpan">loglevel.</span>info
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+loglevel supports AMD (e.g. RequireJS), CommonJS (e.g. Node.js) and direct usage (e.g. loading globally with a &#x26;lt;script&#
+x26;gt; tag) loading methods. You should be able to do nearly anything, and then skip to the next section anyway and have it work
+. Just in case though, here&#x27;s some specific examples that definitely do the right thing:
+
+### CommonsJS (e.g. Node)
+
+```javascript
+var log = require(&#x27;loglevel&#x27;);
+log.<span class="apidocCodeKeywordSpan">info</span>(&#x22;unreasonably simple&#x22;);
+```
+
+### AMD (e.g. RequireJS)
+
+```javascript
+define([&#x27;loglevel&#x27;], function(log) {
+log.warn(&#x22;dangerously convenient&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.methodFactory" id="apidoc.element.loglevel.methodFactory">
+        function <span class="apidocSignatureSpan">loglevel.</span>methodFactory
+        <span class="apidocSignatureSpan">(methodName, level, loggerName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaultMethodFactory(methodName, level, loggerName) {
+<span class="apidocCodeCommentSpan">    /*jshint validthis:true */
+</span>    return realMethod(methodName) ||
+           enableLoggingWhenConsoleArrives.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Writing plugins:
+
+Loglevel provides a simple reliable minimal base for console logging that works everywhere. This means it doesn&#x27;t include lots
+ of fancy functionality that might be useful in some cases, such as log formatting and redirection (e.g. also sending log messages
+ to a server over AJAX)
+
+Including that would increase the size and complexity of the library, but more importantly would remove stacktrace information.
+Currently log methods are either disabled, or enabled with directly bound versions of the console.log methods (where possible).
+This means your browser shows the log message as coming from your code at the call to `log.info(&#x22;message!&#x22;)` not from
+within loglevel, since it really calls the bound console method directly, without indirection. The indirection required to dynamically
+ format, further filter, or redirect log messages would stop this.
+
+There&#x27;s clearly enough enthusiasm for this even at that cost though that loglevel now includes a plugin API. To use it, redefine
+ log.<span class="apidocCodeKeywordSpan">methodFactory</span>(methodName, logLevel, loggerName) with a function of your own. This
+ will be called for each enabled method each time the level is set (including initially), and should return a function to be used
+ for the given log method, at the given level, for a logger with the given name. If you&#x27;d like to retain all the reliability
+ and features of loglevel, it&#x27;s recommended that this wraps the initially provided value of `log.methodFactory`
+
+For example, a plugin to prefix all log messages with &#x22;Newsflash: &#x22; would look like:
+
+```javascript
+var originalFactory = log.methodFactory;
+log.methodFactory = function (methodName, logLevel, loggerName) {
+var rawMethod = originalFactory(methodName, logLevel, loggerName);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.noConflict" id="apidoc.element.loglevel.noConflict">
+        function <span class="apidocSignatureSpan">loglevel.</span>noConflict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noConflict = function () {
+    if (typeof window !== undefinedType &#x26;&#x26;
+           window.log === defaultLogger) {
+        window.log = _log;
+    }
+
+    return defaultLogger;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you&#x27;re using another JavaScript library that exposes a &#x27;log&#x27; global, you can run into conflicts with loglevel.
+Similarly to jQuery, you can solve this by putting loglevel into no-conflict mode immediately after it is loaded onto the page.
+This resets to &#x27;log&#x27; global to its value before loglevel was loaded (typically `undefined`), and returns the loglevel
+object, which you can then bind to another name yourself.
+
+For example:
+
+```html
+&#x3c;script src=&#x22;loglevel.min.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script&#x3e;
+var logging = log.<span class="apidocCodeKeywordSpan">noConflict</span>();
+
+logging.error(&#x22;still pretty easy&#x22;);
+&#x3c;/script&#x3e;
+```
+
+## Documentation
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.setDefaultLevel" id="apidoc.element.loglevel.setDefaultLevel">
+        function <span class="apidocSignatureSpan">loglevel.</span>setDefaultLevel
+        <span class="apidocSignatureSpan">(level)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaultLevel = function (level) {
+    if (!getPersistedLevel()) {
+        self.setLevel(level, false);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  * As a string, like &#x27;error&#x27; (case-insensitive) ← _for a reasonable practical balance_
+  * As a numeric index from 0 (trace) to 5 (silent) ← _deliciously terse, and more easily programmable (...although, why?)_
+
+  Where possible the log level will be persisted. LocalStorage will be used if available, falling back to cookies if not. If neither
+ is available in the current environment (i.e. in Node), or if you pass `false` as the optional &#x27;persist&#x27; second argument
+, persistence will be skipped.
+
+  If log.setLevel() is called when a console object is not available (in IE 8 or 9 before the developer tools have been opened,
+for example) logging will remain silent until the console becomes available, and then begin logging at the requested level.
+
+* A `log.<span class="apidocCodeKeywordSpan">setDefaultLevel</span>(level)` method.
+
+  This sets the current log level only if one has not been persisted and can’t be loaded. This is useful when initializing scripts
+; if a developer or user has previously called `setLevel()`, this won’t alter their settings. For example, your application might
+ set the log level to `error` in a production environment, but when debugging an issue, you might call `setLevel(&#x22;trace&#x22
+;)` on the console to see all the logs. If that `error` setting was set using `setDefaultLevel()`, it will still say as `trace`
+on subsequent page loads and refreshes instead of resetting to `error`.
+
+  The `level` argument takes is the same values that you might pass to `setLevel()`. Levels set using `setDefaultLevel()` never
+persist to subsequent page loads.
+
+* `log.enableAll()` and `log.disableAll()` methods.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.setLevel" id="apidoc.element.loglevel.setLevel">
+        function <span class="apidocSignatureSpan">loglevel.</span>setLevel
+        <span class="apidocSignatureSpan">(level, persist)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLevel = function (level, persist) {
+    if (typeof level === &#x22;string&#x22; &#x26;&#x26; self.levels[level.toUpperCase()] !== undefined) {
+        level = self.levels[level.toUpperCase()];
+    }
+    if (typeof level === &#x22;number&#x22; &#x26;&#x26; level &#x3e;= 0 &#x26;&#x26; level &#x3c;= self.levels.SILENT) {
+        currentLevel = level;
+        if (persist !== false) {  // defaults to true
+            persistLevelIfPossible(level);
+        }
+        replaceLoggingMethods.call(self, level, name);
+        if (typeof console === undefinedType &#x26;&#x26; level &#x3c; self.levels.SILENT) {
+            return &#x22;No console available for logging&#x22;;
+        }
+    } else {
+        throw &#x22;log.setLevel() called with invalid level: &#x22; + level;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This is a barebones reliable everyday logging library. It does not do fancy things, it does not let you reconfigure appenders or
+ add complex log filtering rules or boil tea (more&#x27;s the pity), but it does have the all core functionality that you actually
+ use:
+
+## Features
+
+### Simple
+
+* Log things at a given level (trace/debug/info/warn/error) to the console object (as seen in all modern browsers &#x26; node.js
+)
+* Filter logging by level (all the above or &#x27;silent&#x27;), so you can disable all but error logging in production, and then
+ run log.<span class="apidocCodeKeywordSpan">setLevel</span>(&#x22;trace&#x22;) in your console to turn it all back on for a furious
+ debugging session
+* Single file, no dependencies, weighs in at 1.1KB minified and gzipped
+
+### Effective
+
+* Log methods gracefully fall back to simpler console logging methods if more specific ones aren&#x27;t available: so calls to log
+.debug() go to console.debug() if possible, or console.log() if not
+* Logging calls still succeed even if there&#x27;s no console object at all, so your site doesn&#x27;t break when people visit with
+ old browsers that don&#x27;t support the console object (here&#x27;s looking at you IE) and similar
+* This then comes together giving a consistent reliable API that works in every JavaScript environment with a console available,
+and never breaks anything anywhere else
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.trace" id="apidoc.element.loglevel.trace">
+        function <span class="apidocSignatureSpan">loglevel.</span>trace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trace = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## Documentation
+
+The loglevel API is extremely minimal. All methods are available on the root loglevel object, which it&#x27;s suggested you name
+ &#x27;log&#x27; (this is the default if you import it in globally, and is what&#x27;s set up in the above examples). The API consists
+ of:
+
+* 5 actual logging methods, ordered and available as:
+* `log.<span class="apidocCodeKeywordSpan">trace</span>(msg)`
+* `log.debug(msg)`
+* `log.info(msg)`
+* `log.warn(msg)`
+* `log.error(msg)`
+
+Exact output formatting of these will depend on the console available in the current context of your application. For example, many
+ environments will include a full stack trace with all trace() calls, and icons or similar to highlight other calls.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.warn" id="apidoc.element.loglevel.warn">
+        function <span class="apidocSignatureSpan">loglevel.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+log.info(&#x22;unreasonably simple&#x22;);
+```
+
+### AMD (e.g. RequireJS)
+
+```javascript
+define([&#x27;loglevel&#x27;], function(log) {
+   log.<span class="apidocCodeKeywordSpan">warn</span>(&#x22;dangerously convenient&#x22;);
+});
+```
+
+### Directly in your web page:
+
+```html
+&#x3c;script src=&#x22;loglevel.min.js&#x22;&#x3e;&#x3c;/script&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.Gruntfile" id="apidoc.module.loglevel.Gruntfile">module loglevel.Gruntfile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.Gruntfile.Gruntfile" id="apidoc.element.loglevel.Gruntfile.Gruntfile">
+        function <span class="apidocSignatureSpan">loglevel.</span>Gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
+
+    // Project configuration.
+    grunt.initConfig({
+        // Metadata.
+        pkg: grunt.file.readJSON(&#x27;package.json&#x27;),
+        banner: &#x27;/*! &#x3c;%= pkg.name %&#x3e; - v&#x3c;%= pkg.version %&#x3e;&#x27; +
+                &#x27; - &#x3c;%= pkg.homepage %&#x3e;&#x27; +
+                &#x27; - (c) &#x3c;%= grunt.template.today(&#x22;yyyy&#x22;) %&#x3e; &#x3c;%= pkg.author.name %&#x3e;&#x27; +
+                &#x27; - licensed &#x3c;%= pkg.license %&#x3e; */\n&#x27;,
+        // Task configuration.
+        concat: {
+            options: {
+                banner: &#x27;&#x3c;%= banner %&#x3e;&#x27;,
+                stripBanners: true
+            },
+            dist: {
+                src: [&#x27;lib/&#x3c;%= pkg.name %&#x3e;.js&#x27;],
+                dest: &#x27;dist/&#x3c;%= pkg.name %&#x3e;.js&#x27;
+            }
+        },
+        uglify: {
+            options: {
+                banner: &#x27;&#x3c;%= banner %&#x3e;&#x27;
+            },
+            dist: {
+                src: &#x27;&#x3c;%= concat.dist.dest %&#x3e;&#x27;,
+                dest: &#x27;dist/&#x3c;%= pkg.name %&#x3e;.min.js&#x27;
+            }
+        },
+        jasmine: {
+            requirejs: {
+                src: [],
+                options: {
+                    specs: &#x27;test/*-test.js&#x27;,
+                    vendor: &#x27;test/vendor/*.js&#x27;,
+                    helpers: &#x27;test/*-helper.js&#x27;,
+                    template: require(&#x27;grunt-template-jasmine-requirejs&#x27;)
+                }
+            },
+            global: {
+                src: &#x27;lib/**/*.js&#x27;,
+                options: {
+                    specs: &#x27;test/global-integration.js&#x27;,
+                    vendor: &#x27;test/vendor/*.js&#x27;
+                }
+            },
+            context: {
+                src: &#x27;test/test-context-using-apply.test.js&#x27;,
+                options: {
+                    specs: &#x27;test/global-integration-with-new-context.js&#x27;,
+                    vendor: &#x27;test/vendor/*.js&#x27;
+                }
+            },
+            withCoverage: {
+                src: &#x27;lib/**/*.js&#x27;,
+                options: {
+                    specs: &#x27;test/*-test.js&#x27;,
+                    vendor: &#x27;test/vendor/*.js&#x27;,
+                    helpers: &#x27;test/*-helper.js&#x27;,
+                    template: require(&#x27;grunt-template-jasmine-istanbul&#x27;),
+                    templateOptions: {
+                        coverage: &#x27;coverage/coverage.json&#x27;,
+                        report: [
+                            {
+                                type: &#x27;html&#x27;,
+                                options: {
+                                    dir: &#x27;coverage&#x27;
+                                }
+                            },
+                            {
+                                type: &#x27;lcov&#x27;,
+                                options: {
+                                    dir: &#x27;coverage&#x27;
+                                }
+                            }
+                        ],
+
+                        template: require(&#x27;grunt-template-jasmine-requirejs&#x27;),
+                        templateOptions: {
+                            requireConfig: {
+                                paths: {
+                                    &#x22;lib&#x22;: &#x27;.grunt/grunt-contrib-jasmine/lib/&#x27;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        &#x22;jasmine_node&#x22;: {
+            options: {
+                match: &#x22;node-integration.&#x22;,
+                matchall: true,
+                projectRoot: &#x22;./test&#x22;,
+                useHelpers: false
+            }
+        },
+        coveralls: {
+            src: &#x27;coverage/lcov.info&#x27;
+        },
+        open: {
+            jasmine: {
+                path: &#x27;http://127.0.0.1:8000/_SpecRunner.html&#x27;
+            }
+        },
+        connect: {
+            test: {
+                port: 8000,
+                keepalive: true
+            }
+        },
+        &#x27;saucelabs-jasmine&#x27;: {
+            // Requires valid SAUCE_USERNAME and SAUCE_ACCESS_KEY in env to run.
+            all: {
+                options: {
+                    urls: [&#x27;http://localhost:8000/_SpecRunner.html&#x27;],
+                    browsers: [
+                        {&#x22;browserName&#x22;: &#x22;firefox&#x22;, &#x22;platform&#x22;: &#x22;Windows 2003&#x22;, &#x22;version&#x22;: &#x22;3.6&#x22;},
+                        {&#x22;browserName&#x22;: &#x22;fir ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.disableAll" id="apidoc.module.loglevel.disableAll">module loglevel.disableAll</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.disableAll.disableAll" id="apidoc.element.loglevel.disableAll.disableAll">
+        function <span class="apidocSignatureSpan">loglevel.</span>disableAll
+        <span class="apidocSignatureSpan">(persist)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disableAll = function (persist) {
+    self.setLevel(self.levels.SILENT, persist);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* A `log.setDefaultLevel(level)` method.
+
+This sets the current log level only if one has not been persisted and can’t be loaded. This is useful when initializing scripts
+; if a developer or user has previously called `setLevel()`, this won’t alter their settings. For example, your application might
+ set the log level to `error` in a production environment, but when debugging an issue, you might call `setLevel(&#x22;trace&#x22
+;)` on the console to see all the logs. If that `error` setting was set using `setDefaultLevel()`, it will still say as `trace`
+on subsequent page loads and refreshes instead of resetting to `error`.
+
+The `level` argument takes is the same values that you might pass to `setLevel()`. Levels set using `setDefaultLevel()` never persist
+ to subsequent page loads.
+
+* `log.enableAll()` and `log.<span class="apidocCodeKeywordSpan">disableAll</span>()` methods.
+
+These enable or disable all log messages, and are equivalent to log.setLevel(&#x22;trace&#x22;) and log.setLevel(&#x22;silent&#x22
+;) respectively.
+
+* A `log.getLevel()` method.
+
+Returns the current logging level, as a number from 0 (trace) to 5 (silent)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.enableAll" id="apidoc.module.loglevel.enableAll">module loglevel.enableAll</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.enableAll.enableAll" id="apidoc.element.loglevel.enableAll.enableAll">
+        function <span class="apidocSignatureSpan">loglevel.</span>enableAll
+        <span class="apidocSignatureSpan">(persist)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enableAll = function (persist) {
+    self.setLevel(self.levels.TRACE, persist);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Logging calls still succeed even if there&#x27;s no console object at all, so your site doesn&#x27;t break when people visit with
+ old browsers that don&#x27;t support the console object (here&#x27;s looking at you IE) and similar
+* This then comes together giving a consistent reliable API that works in every JavaScript environment with a console available,
+and never breaks anything anywhere else
+
+### Convenient
+
+* Log output keeps line numbers: most JS logging frameworks call console.log methods through wrapper functions, clobbering your
+stacktrace and making the extra info many browsers provide useless. We&#x27;ll have none of that thanks.
+* It works with all the standard JavaScript loading systems out of the box (CommonJS, AMD, or just as a global)
+* Logging is filtered to &#x22;warn&#x22; level by default, to keep your live site clean in normal usage (or you can trivially re
+-enable everything with an initial log.<span class="apidocCodeKeywordSpan">enableAll</span>() call)
+* Magically handles situations where console logging is not initially available (IE8/9), and automatically enables logging as soon
+ as it does become available (when developer console is opened)
+* Extensible, to add other log redirection, filtering, or formatting functionality, while keeping all the above (except you will
+ clobber your stacktrace, see Plugins below)
+
+## Downloading loglevel
+
+If you&#x27;re using NPM, you can just run `npm install loglevel`.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.error" id="apidoc.module.loglevel.error">module loglevel.error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.error.error" id="apidoc.element.loglevel.error.error">
+        function <span class="apidocSignatureSpan">loglevel.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Directly in your web page:
+
+```html
+&#x3c;script src=&#x22;loglevel.min.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script&#x3e;
+log.<span class="apidocCodeKeywordSpan">error</span>(&#x22;too easy&#x22;);
+&#x3c;/script&#x3e;
+```
+
+### With noConflict():
+
+If you&#x27;re using another JavaScript library that exposes a &#x27;log&#x27; global, you can run into conflicts with loglevel.
+Similarly to jQuery, you can solve this by putting loglevel into no-conflict mode immediately after it is loaded onto the page.
+This resets to &#x27;log&#x27; global to its value before loglevel was loaded (typically `undefined`), and returns the loglevel
+object, which you can then bind to another name yourself.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.getLevel" id="apidoc.module.loglevel.getLevel">module loglevel.getLevel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.getLevel.getLevel" id="apidoc.element.loglevel.getLevel.getLevel">
+        function <span class="apidocSignatureSpan">loglevel.</span>getLevel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLevel = function () {
+    return currentLevel;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The `level` argument takes is the same values that you might pass to `setLevel()`. Levels set using `setDefaultLevel()` never persist
+ to subsequent page loads.
+
+* `log.enableAll()` and `log.disableAll()` methods.
+
+These enable or disable all log messages, and are equivalent to log.setLevel(&#x22;trace&#x22;) and log.setLevel(&#x22;silent&#x22
+;) respectively.
+
+* A `log.<span class="apidocCodeKeywordSpan">getLevel</span>()` method.
+
+Returns the current logging level, as a number from 0 (trace) to 5 (silent)
+
+It&#x27;s very unlikely you&#x27;ll need to use this for normal application logging; it&#x27;s provided partly to help plugin development
+, and partly to let you optimize logging code as below, where debug data is only generated if the level is set such that it&#x27
+;ll actually be logged. This probably doesn&#x27;t affect you, unless you&#x27;ve run profiling on your code and you have hard numbers
+ telling you that your log data generation is a real performance problem.
+
+```javascript
+if (log.getLevel() &#x3c;= log.levels.DEBUG) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.getLogger" id="apidoc.module.loglevel.getLogger">module loglevel.getLogger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.getLogger.getLogger" id="apidoc.element.loglevel.getLogger.getLogger">
+        function <span class="apidocSignatureSpan">loglevel.</span>getLogger
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLogger(name) {
+    if (typeof name !== &#x22;string&#x22; || name === &#x22;&#x22;) {
+      throw new TypeError(&#x22;You must supply a name when creating a logger.&#x22;);
+    }
+
+    var logger = _loggersByName[name];
+    if (!logger) {
+      logger = _loggersByName[name] = new Logger(
+        name, defaultLogger.getLevel(), defaultLogger.methodFactory);
+    }
+    return logger;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This notably isn&#x27;t the right solution to avoid the cost of string concatenation in your logging. Firstly, it&#x27;s very unlikely
+ that string concatenation in your logging is really an important performance problem. Even if you do genuinely have hard metrics
+ showing that it is though, the better solution that wrapping your log statements in this is to use multiple arguments, as below
+. The underlying console API will automatically concatenate these for you if logging is enabled, and if it isn&#x27;t then all log
+ methods are no-ops, and no concatenation will be done at all.
+
+```javascript
+// Prints &#x27;My concatenated log message&#x27;
+log.debug(&#x22;My &#x22;, &#x22;concatenated &#x22;, &#x22;log message&#x22;);
+```
+
+* A `log.<span class="apidocCodeKeywordSpan">getLogger</span>(loggerName)` method.
+
+This gets you a new logger object that works exactly like the root `log` object, but can have its level and logging methods set
+independently. All loggers must have a name (which is a non-empty string). Calling `getLogger()` multiple times with the same name
+ will return an identical logger object.
+
+In large applications, it can be incredibly useful to turn logging on and off for particular modules as you are working with them
+. Using the `getLogger()` method lets you create a separate logger for each part of your application with its own logging level.
+
+Likewise, for small, independent modules, using a named logger instead of the default root logger allows developers using your module
+ to selectively turn on deep, trace-level logging when trying to debug problems, while logging only errors or silencing logging
+altogether under normal circumstances.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.methodFactory" id="apidoc.module.loglevel.methodFactory">module loglevel.methodFactory</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.methodFactory.methodFactory" id="apidoc.element.loglevel.methodFactory.methodFactory">
+        function <span class="apidocSignatureSpan">loglevel.</span>methodFactory
+        <span class="apidocSignatureSpan">(methodName, level, loggerName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaultMethodFactory(methodName, level, loggerName) {
+<span class="apidocCodeCommentSpan">    /*jshint validthis:true */
+</span>    return realMethod(methodName) ||
+           enableLoggingWhenConsoleArrives.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Writing plugins:
+
+Loglevel provides a simple reliable minimal base for console logging that works everywhere. This means it doesn&#x27;t include lots
+ of fancy functionality that might be useful in some cases, such as log formatting and redirection (e.g. also sending log messages
+ to a server over AJAX)
+
+Including that would increase the size and complexity of the library, but more importantly would remove stacktrace information.
+Currently log methods are either disabled, or enabled with directly bound versions of the console.log methods (where possible).
+This means your browser shows the log message as coming from your code at the call to `log.info(&#x22;message!&#x22;)` not from
+within loglevel, since it really calls the bound console method directly, without indirection. The indirection required to dynamically
+ format, further filter, or redirect log messages would stop this.
+
+There&#x27;s clearly enough enthusiasm for this even at that cost though that loglevel now includes a plugin API. To use it, redefine
+ log.<span class="apidocCodeKeywordSpan">methodFactory</span>(methodName, logLevel, loggerName) with a function of your own. This
+ will be called for each enabled method each time the level is set (including initially), and should return a function to be used
+ for the given log method, at the given level, for a logger with the given name. If you&#x27;d like to retain all the reliability
+ and features of loglevel, it&#x27;s recommended that this wraps the initially provided value of `log.methodFactory`
+
+For example, a plugin to prefix all log messages with &#x22;Newsflash: &#x22; would look like:
+
+```javascript
+var originalFactory = log.methodFactory;
+log.methodFactory = function (methodName, logLevel, loggerName) {
+var rawMethod = originalFactory(methodName, logLevel, loggerName);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.noConflict" id="apidoc.module.loglevel.noConflict">module loglevel.noConflict</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.noConflict.noConflict" id="apidoc.element.loglevel.noConflict.noConflict">
+        function <span class="apidocSignatureSpan">loglevel.</span>noConflict
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noConflict = function () {
+    if (typeof window !== undefinedType &#x26;&#x26;
+           window.log === defaultLogger) {
+        window.log = _log;
+    }
+
+    return defaultLogger;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you&#x27;re using another JavaScript library that exposes a &#x27;log&#x27; global, you can run into conflicts with loglevel.
+Similarly to jQuery, you can solve this by putting loglevel into no-conflict mode immediately after it is loaded onto the page.
+This resets to &#x27;log&#x27; global to its value before loglevel was loaded (typically `undefined`), and returns the loglevel
+object, which you can then bind to another name yourself.
+
+For example:
+
+```html
+&#x3c;script src=&#x22;loglevel.min.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script&#x3e;
+var logging = log.<span class="apidocCodeKeywordSpan">noConflict</span>();
+
+logging.error(&#x22;still pretty easy&#x22;);
+&#x3c;/script&#x3e;
+```
+
+## Documentation
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.setDefaultLevel" id="apidoc.module.loglevel.setDefaultLevel">module loglevel.setDefaultLevel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.setDefaultLevel.setDefaultLevel" id="apidoc.element.loglevel.setDefaultLevel.setDefaultLevel">
+        function <span class="apidocSignatureSpan">loglevel.</span>setDefaultLevel
+        <span class="apidocSignatureSpan">(level)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaultLevel = function (level) {
+    if (!getPersistedLevel()) {
+        self.setLevel(level, false);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  * As a string, like &#x27;error&#x27; (case-insensitive) ← _for a reasonable practical balance_
+  * As a numeric index from 0 (trace) to 5 (silent) ← _deliciously terse, and more easily programmable (...although, why?)_
+
+  Where possible the log level will be persisted. LocalStorage will be used if available, falling back to cookies if not. If neither
+ is available in the current environment (i.e. in Node), or if you pass `false` as the optional &#x27;persist&#x27; second argument
+, persistence will be skipped.
+
+  If log.setLevel() is called when a console object is not available (in IE 8 or 9 before the developer tools have been opened,
+for example) logging will remain silent until the console becomes available, and then begin logging at the requested level.
+
+* A `log.<span class="apidocCodeKeywordSpan">setDefaultLevel</span>(level)` method.
+
+  This sets the current log level only if one has not been persisted and can’t be loaded. This is useful when initializing scripts
+; if a developer or user has previously called `setLevel()`, this won’t alter their settings. For example, your application might
+ set the log level to `error` in a production environment, but when debugging an issue, you might call `setLevel(&#x22;trace&#x22
+;)` on the console to see all the logs. If that `error` setting was set using `setDefaultLevel()`, it will still say as `trace`
+on subsequent page loads and refreshes instead of resetting to `error`.
+
+  The `level` argument takes is the same values that you might pass to `setLevel()`. Levels set using `setDefaultLevel()` never
+persist to subsequent page loads.
+
+* `log.enableAll()` and `log.disableAll()` methods.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.setLevel" id="apidoc.module.loglevel.setLevel">module loglevel.setLevel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.setLevel.setLevel" id="apidoc.element.loglevel.setLevel.setLevel">
+        function <span class="apidocSignatureSpan">loglevel.</span>setLevel
+        <span class="apidocSignatureSpan">(level, persist)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLevel = function (level, persist) {
+    if (typeof level === &#x22;string&#x22; &#x26;&#x26; self.levels[level.toUpperCase()] !== undefined) {
+        level = self.levels[level.toUpperCase()];
+    }
+    if (typeof level === &#x22;number&#x22; &#x26;&#x26; level &#x3e;= 0 &#x26;&#x26; level &#x3c;= self.levels.SILENT) {
+        currentLevel = level;
+        if (persist !== false) {  // defaults to true
+            persistLevelIfPossible(level);
+        }
+        replaceLoggingMethods.call(self, level, name);
+        if (typeof console === undefinedType &#x26;&#x26; level &#x3c; self.levels.SILENT) {
+            return &#x22;No console available for logging&#x22;;
+        }
+    } else {
+        throw &#x22;log.setLevel() called with invalid level: &#x22; + level;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This is a barebones reliable everyday logging library. It does not do fancy things, it does not let you reconfigure appenders or
+ add complex log filtering rules or boil tea (more&#x27;s the pity), but it does have the all core functionality that you actually
+ use:
+
+## Features
+
+### Simple
+
+* Log things at a given level (trace/debug/info/warn/error) to the console object (as seen in all modern browsers &#x26; node.js
+)
+* Filter logging by level (all the above or &#x27;silent&#x27;), so you can disable all but error logging in production, and then
+ run log.<span class="apidocCodeKeywordSpan">setLevel</span>(&#x22;trace&#x22;) in your console to turn it all back on for a furious
+ debugging session
+* Single file, no dependencies, weighs in at 1.1KB minified and gzipped
+
+### Effective
+
+* Log methods gracefully fall back to simpler console logging methods if more specific ones aren&#x27;t available: so calls to log
+.debug() go to console.debug() if possible, or console.log() if not
+* Logging calls still succeed even if there&#x27;s no console object at all, so your site doesn&#x27;t break when people visit with
+ old browsers that don&#x27;t support the console object (here&#x27;s looking at you IE) and similar
+* This then comes together giving a consistent reliable API that works in every JavaScript environment with a console available,
+and never breaks anything anywhere else
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.trace" id="apidoc.module.loglevel.trace">module loglevel.trace</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.trace.trace" id="apidoc.element.loglevel.trace.trace">
+        function <span class="apidocSignatureSpan">loglevel.</span>trace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trace = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+## Documentation
+
+The loglevel API is extremely minimal. All methods are available on the root loglevel object, which it&#x27;s suggested you name
+ &#x27;log&#x27; (this is the default if you import it in globally, and is what&#x27;s set up in the above examples). The API consists
+ of:
+
+* 5 actual logging methods, ordered and available as:
+* `log.<span class="apidocCodeKeywordSpan">trace</span>(msg)`
+* `log.debug(msg)`
+* `log.info(msg)`
+* `log.warn(msg)`
+* `log.error(msg)`
+
+Exact output formatting of these will depend on the console available in the current context of your application. For example, many
+ environments will include a full stack trace with all trace() calls, and icons or similar to highlight other calls.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.loglevel.warn" id="apidoc.module.loglevel.warn">module loglevel.warn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.loglevel.warn.warn" id="apidoc.element.loglevel.warn.warn">
+        function <span class="apidocSignatureSpan">loglevel.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+log.info(&#x22;unreasonably simple&#x22;);
+```
+
+### AMD (e.g. RequireJS)
+
+```javascript
+define([&#x27;loglevel&#x27;], function(log) {
+   log.<span class="apidocCodeKeywordSpan">warn</span>(&#x22;dangerously convenient&#x22;);
+});
+```
+
+### Directly in your web page:
+
+```html
+&#x3c;script src=&#x22;loglevel.min.js&#x22;&#x3e;&#x3c;/script&#x3e;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
